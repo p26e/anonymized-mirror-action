@@ -32,8 +32,8 @@ The branch to mirror. Default: `main`
   steps:
     - uses: actions/checkout@v2 # <-- must be provided, else no source repo is provided to anonymized-mirror-action
       with:
-        fetch-depth: '0' # <-- must be 0 to prevent shallow clone issues
-        ref: 'main'
+        fetch-depth: "0" # <-- must be 0 to prevent shallow clone issues
+        ref: "main"
     - uses: pstnorge/anonymized-mirror-action@v1
       with:
         ssh_private_key: ${{ secrets.REMOTE_SSH_PRIVATE_KEY }} # <-- use GitHub secrets for the SSH key
