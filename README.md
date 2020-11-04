@@ -1,2 +1,43 @@
 # anonymized-mirror-action
-Mirror an anonymized version of the main branch of a repository to another repository.
+Mirror an anonymized version of a branch to another repository.
+
+_For this action to work it needs write access to the remote destination repository. If your remote repository is hosted on GitHub, we recommend adding the SSH-key (public) as a [deploy key](https://docs.github.com/en/free-pro-team@latest/developers/overview/managing-deploy-keys#deploy-keys) in the remote repository._
+
+## Inputs
+
+### `ssh_private_key`
+
+**Required** The SSH key used when pushing to the destination repository.
+
+### `destination_git_url`
+
+**Required** URL of the remote destination repository.
+
+### `annon_name`
+
+The name all commits (both committer and author) will be rewritten to use. Default: `annon`
+
+### `annon_email`
+
+The email all commits (both committer and author) will be rewritten to use. Default: `annon@nowhere.tld`
+
+### `mirror_branch`
+
+The branch to mirror. Default: `main`
+
+## Example usage
+
+```yaml
+...
+  steps:
+    - uses: actions/checkout@v2 # <-- must be provided, else no source repo is provided to anonymized-mirror-action
+      with:
+        fetch-depth: '0' # <-- must be 0 to prevent shallow clone issues
+        ref: 'main'
+    - uses: pstnorge/anonymized-mirror-action@v1
+      with:
+        ssh_private_key: ${{ secrets.REMOTE_SSH_PRIVATE_KEY }} # <-- use GitHub secrets for the SSH key
+        destination_git_url: "git@github.com:mi6/public-anonymized-repo.git"
+        annon_name: "Q"
+        annon_email: "q@mi6.gov.uk
+```
