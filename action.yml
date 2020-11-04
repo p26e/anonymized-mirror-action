@@ -1,0 +1,30 @@
+name: "Anonymized Repository Mirroring"
+description: "Mirror an anonymized version of a branch to another repository"
+
+branding:
+  icon: "share"
+  color: "purple"
+
+inputs:
+  ssh_private_key:
+    description: "The SSH key used when pushing to the destination repository"
+    required: true
+  destination_git_url:
+    description: "URL of the remote destination repository"
+    required: true
+  annon_name:
+    description: "The name all commits (both committer and author) will be rewritten to use"
+    default: "Annon"
+    required: false
+  annon_email:
+    description: "The email all commits (both committer and author) will be rewritten to use"
+    default: "annon@nowhere.tld"
+    required: false
+  mirror_branch:
+    description: "The branch to mirror"
+    default: "main"
+    required: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
