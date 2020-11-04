@@ -39,5 +39,5 @@ The branch to mirror. Default: `main`
         ssh_private_key: ${{ secrets.REMOTE_SSH_PRIVATE_KEY }} # <-- use GitHub secrets for the SSH key
         destination_git_url: "git@github.com:mi6/public-anonymized-repo.git"
         annon_name: "Q"
-        annon_email: "q@mi6.gov.uk
+        annon_email: "q@mi6.gov.uk"
 ```
