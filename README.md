@@ -1,4 +1,4 @@
-# anonymized-mirror-action
+# Anonymized Repository Mirroring
 Mirror an anonymized version of a branch to another repository.
 
 _For this action to work it needs write access to the remote destination repository. If your remote repository is hosted on GitHub, we recommend adding the SSH-key (public) as a [deploy key](https://docs.github.com/en/free-pro-team@latest/developers/overview/managing-deploy-keys#deploy-keys) in the remote repository._
