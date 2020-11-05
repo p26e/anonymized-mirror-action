@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Exit if the current remote URL is the destination URL
+if git config --get remote.origin.url | grep -q "$INPUT_DESTINATION_GIT_URL"; then
+	exit 0
+fi
+
 # Setup ssh
 mkdir -p ~/.ssh
 echo "$INPUT_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
