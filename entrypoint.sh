@@ -7,10 +7,10 @@ chmod 600 ~/.ssh/id_rsa
 
 # Rewrite authors
 git filter-branch --env-filter '
-	export GIT_COMMITTER_NAME="$INPUT_ANNON_NAME"
-	export GIT_COMMITTER_EMAIL="$INPUT_ANNON_EMAIL"
-	export GIT_AUTHOR_NAME="$INPUT_ANNON_NAME"
-	export GIT_AUTHOR_EMAIL="$INPUT_ANNON_EMAIL"
+	export GIT_COMMITTER_NAME="$INPUT_ANON_NAME"
+	export GIT_COMMITTER_EMAIL="$INPUT_ANON_EMAIL"
+	export GIT_AUTHOR_NAME="$INPUT_ANON_NAME"
+	export GIT_AUTHOR_EMAIL="$INPUT_ANON_EMAIL"
 	' --tag-name-filter cat -- --branches --tags
 
 # Don't host check

@@ -13,13 +13,13 @@ _For this action to work it needs write access to the remote destination reposit
 
 **Required** URL of the remote destination repository.
 
-### `annon_name`
+### `anon_name`
 
-The name all commits (both committer and author) will be rewritten to use. Default: `annon`
+The name all commits (both committer and author) will be rewritten to use. Default: `anon`
 
-### `annon_email`
+### `anon_email`
 
-The email all commits (both committer and author) will be rewritten to use. Default: `annon@nowhere.tld`
+The email all commits (both committer and author) will be rewritten to use. Default: `anon@nowhere.tld`
 
 ### `mirror_branch`
 
@@ -38,6 +38,6 @@ The branch to mirror. Default: `main`
       with:
         ssh_private_key: ${{ secrets.REMOTE_SSH_PRIVATE_KEY }} # <-- use GitHub secrets for the SSH key
         destination_git_url: "git@github.com:pstnorge/public-anonymized-repo.git"
-        annon_name: "PST"
-        annon_email: "noreply@pst.no"
+        anon_name: "PST"
+        anon_email: "noreply@pst.no"
 ```
