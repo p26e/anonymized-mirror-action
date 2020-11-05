@@ -12,13 +12,13 @@ inputs:
   destination_git_url:
     description: "URL of the remote destination repository"
     required: true
-  annon_name:
+  anon_name:
     description: "The name all commits (both committer and author) will be rewritten to use"
-    default: "Annon"
+    default: "Anon"
     required: false
-  annon_email:
+  anon_email:
     description: "The email all commits (both committer and author) will be rewritten to use"
-    default: "annon@nowhere.tld"
+    default: "anon@nowhere.tld"
     required: false
   mirror_branch:
     description: "The branch to mirror"
