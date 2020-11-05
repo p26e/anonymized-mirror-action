@@ -34,7 +34,7 @@ The email all commits (both committer and author) will be rewritten to use. Defa
       with:
         fetch-depth: "0" # <-- must be 0 to prevent shallow clone issues
         ref: "main" # <-- the branch you want to get mirrored and anonymized
-    - uses: pstnorge/anonymized-mirror-action@v1
+    - uses: pstnorge/anonymized-mirror-action@main
       with:
         ssh_private_key: ${{ secrets.REMOTE_SSH_PRIVATE_KEY }} # <-- use GitHub secrets for the SSH key
         destination_git_url: "git@github.com:pstnorge/public-anonymized-repo.git"
