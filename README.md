@@ -13,6 +13,10 @@ _For this action to work it needs write access to the remote destination reposit
 
 **Required** URL of the remote destination repository.
 
+### `mirror_branch`
+
+The branch to write the anonymized mirror to. Default: `main`
+
 ### `anon_name`
 
 The name all commits (both committer and author) will be rewritten to use. Default: `anon`
@@ -20,10 +24,6 @@ The name all commits (both committer and author) will be rewritten to use. Defau
 ### `anon_email`
 
 The email all commits (both committer and author) will be rewritten to use. Default: `anon@nowhere.tld`
-
-### `mirror_branch`
-
-The branch to mirror. Default: `main`
 
 ## Example usage
 
@@ -33,11 +33,12 @@ The branch to mirror. Default: `main`
     - uses: actions/checkout@v2 # <-- must be provided, else no source repo is provided to anonymized-mirror-action
       with:
         fetch-depth: "0" # <-- must be 0 to prevent shallow clone issues
-        ref: "main"
+        ref: "main" # <-- the branch you want to get mirrored and anonymized
     - uses: pstnorge/anonymized-mirror-action@v1
       with:
         ssh_private_key: ${{ secrets.REMOTE_SSH_PRIVATE_KEY }} # <-- use GitHub secrets for the SSH key
         destination_git_url: "git@github.com:pstnorge/public-anonymized-repo.git"
+        mirror_branch: "mirror"
         anon_name: "PST"
         anon_email: "noreply@pst.no"
 ```
