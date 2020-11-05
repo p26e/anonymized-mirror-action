@@ -18,7 +18,7 @@ inputs:
     required: false
   anon_email:
     description: "The email all commits (both committer and author) will be rewritten to use"
-    default: "anon@nowhere.tld"
+    default: "anon@example.com"
     required: false
   mirror_branch:
     description: "The branch to mirror"

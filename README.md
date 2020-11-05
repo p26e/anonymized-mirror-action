@@ -23,7 +23,7 @@ The name all commits (both committer and author) will be rewritten to use. Defau
 
 ### `anon_email`
 
-The email all commits (both committer and author) will be rewritten to use. Default: `anon@nowhere.tld`
+The email all commits (both committer and author) will be rewritten to use. Default: `anon@example.com`
 
 ## Example usage
 
