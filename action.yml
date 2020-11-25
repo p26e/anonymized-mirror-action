@@ -24,6 +24,10 @@ inputs:
     description: "The branch to mirror"
     default: "main"
     required: false
+  remove:
+    description: "Comma separated list of files or directories to remove before mirroring"
+    default: ""
+    required: false
 
 runs:
   using: "docker"
