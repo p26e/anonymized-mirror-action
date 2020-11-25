@@ -25,9 +25,9 @@ The name all commits (both committer and author) will be rewritten to use. Defau
 
 The email all commits (both committer and author) will be rewritten to use. Default: `"anon@example.com"`
 
-### `remove_files`
+### `remove`
 
-Comma seperated list of files to remove before mirroring (e.g. `".github/workflows/mirror.yml,passwords.txt"`). Default: `""`
+Comma separated list of files or directories to remove before mirroring (e.g. `"top_secret/, passwords.txt"`). Default: `""`
 
 ## Example usage
 
@@ -47,5 +47,5 @@ Comma seperated list of files to remove before mirroring (e.g. `".github/workflo
         mirror_branch: "mirror"
         anon_name: "PST"
         anon_email: "noreply@pst.no"
-        remove_files: ".github/workflows/mirror.yml" # Removes this file from the anonymized mirror
+        remove: ".github/workflows/mirror.yml" # Removes this file from the anonymized mirror
 ```
