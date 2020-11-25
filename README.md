@@ -25,7 +25,7 @@ The name all commits (both committer and author) will be rewritten to use. Defau
 
 The email all commits (both committer and author) will be rewritten to use. Default: `"anon@example.com"`
 
-## `remove_files`
+### `remove_files`
 
 Comma seperated list of files to remove before mirroring (e.g. `".github/workflows/mirror.yml,passwords.txt"`). Default: `""`
 
