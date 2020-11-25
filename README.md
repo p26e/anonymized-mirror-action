@@ -19,15 +19,21 @@ The branch to write the anonymized mirror to. Default: `main`
 
 ### `anon_name`
 
-The name all commits (both committer and author) will be rewritten to use. Default: `anon`
+The name all commits (both committer and author) will be rewritten to use. Default: `"anon"`
 
 ### `anon_email`
 
-The email all commits (both committer and author) will be rewritten to use. Default: `anon@example.com`
+The email all commits (both committer and author) will be rewritten to use. Default: `"anon@example.com"`
+
+## `remove_files`
+
+Comma seperated list of files to remove before mirroring (e.g. `".github/workflows/mirror.yml,passwords.txt"`). Default: `""`
 
 ## Example usage
 
 ```yaml
+# .github/workflows/mirror.yml
+
 ...
   steps:
     - uses: actions/checkout@v2 # <-- must be provided, else no source repo is provided to anonymized-mirror-action
@@ -41,4 +47,5 @@ The email all commits (both committer and author) will be rewritten to use. Defa
         mirror_branch: "mirror"
         anon_name: "PST"
         anon_email: "noreply@pst.no"
+        remove_files: ".github/workflows/mirror.yml" # Removes this file from the anonymized mirror
 ```
