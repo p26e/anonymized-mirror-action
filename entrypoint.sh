@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Exit if the current remote URL is the destination URL
 if git config --get remote.origin.url | grep -q "$INPUT_DESTINATION_GIT_URL"; then
@@ -9,6 +9,12 @@ fi
 mkdir -p ~/.ssh
 echo "$INPUT_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
+
+# Remove files
+if [ ! -z "$INPUT_REMOVE" ]; then
+	readarray -td, a <<<"$INPUT_REMOVE,"; unset 'a[-1]';
+	for file in "${a[@]}"; do rm -rf "$file"; done
+fi
 
 # Rewrite authors
 git filter-branch --env-filter '
