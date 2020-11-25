@@ -11,12 +11,9 @@ echo "$INPUT_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
 # Remove files
-ls -la
 if [ ! -z "$INPUT_REMOVE" ]; then
 	readarray -td, a <<<"$INPUT_REMOVE,"; unset 'a[-1]';
-	for file in "${a[@]}"; do
-		echo rm -rf "$file"
-	done
+	for file in "${a[@]}"; do rm -rf "$file"; done
 fi
 
 # Rewrite authors
